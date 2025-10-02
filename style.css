@@ -468,3 +468,38 @@
   border: 2px solid #2DB400;
   color: #2DB400;
 }
+#congratulatory {
+  text-align: center;
+  padding: 50px 20px;
+  background: #f9f9f9;
+}
+
+.congratulatory-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.congratulatory-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 20px;
+  width: 250px;
+  transition: transform 0.3s;
+}
+
+.congratulatory-card:hover {
+  transform: translateY(-10px);
+}
+
+.guest-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 4px solid #007bff;
+}
