@@ -267,6 +267,15 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     };
   </script>
+<script>
+  document.querySelector('.register-btn').addEventListener('click', function(e) {
+    e.preventDefault(); // Default jump বন্ধ করবে
+    const target = document.querySelector('#registration');
+    if(target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+</script>
 
 </body>
 </html>
