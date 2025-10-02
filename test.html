@@ -4,1188 +4,204 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ICT Seminar 2025 - Seoul</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    :root {
-      --primary: #667eea;
-      --secondary: #764ba2;
-      --accent: #f093fb;
-      --text-dark: #2d3748;
-      --text-light: #718096;
-      --white: #ffffff;
-      --bg-light: #f7fafc;
-      --bg-card: rgba(255, 255, 255, 0.95);
-      --shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-      --shadow-hover: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-      --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-      --gradient-accent: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
-    }
-
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      line-height: 1.7;
-      color: var(--text-dark);
-      scroll-behavior: smooth;
-      overflow-x: hidden;
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      background: #f9f9fb;
+      color: #333;
     }
-
-    /* Navigation */
-    .navbar {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(20px);
-      z-index: 1000;
-      padding: 1rem 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      transition: all 0.3s ease;
-    }
-
-    .navbar.scrolled {
-      background: rgba(255, 255, 255, 0.98);
-      box-shadow: var(--shadow);
-    }
-
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 2rem;
-    }
-
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 800;
-      background: var(--gradient-primary);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .nav-links {
-      display: flex;
-      list-style: none;
-      gap: 2rem;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: var(--text-dark);
-      font-weight: 500;
-      transition: color 0.3s ease;
-      position: relative;
-    }
-
-    .nav-links a:hover {
-      color: var(--primary);
-    }
-
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: -5px;
-      left: 50%;
-      background: var(--gradient-primary);
-      transition: all 0.3s ease;
-      transform: translateX(-50%);
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    /* Hero Section */
-    .hero {
+    header {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://source.unsplash.com/1600x600/?technology,conference') no-repeat center center/cover;
       height: 100vh;
-      background: var(--gradient-primary);
+      color: white;
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-direction: column;
       text-align: center;
-      color: var(--white);
-      position: relative;
-      overflow: hidden;
     }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      width: 200%;
-      height: 200%;
-      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><circle cx="200" cy="200" r="3" fill="rgba(255,255,255,0.1)"/><circle cx="800" cy="400" r="2" fill="rgba(255,255,255,0.15)"/><circle cx="400" cy="600" r="4" fill="rgba(255,255,255,0.08)"/><circle cx="600" cy="800" r="2" fill="rgba(255,255,255,0.12)"/></svg>') repeat;
-      animation: float 20s ease-in-out infinite;
-      z-index: 0;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translate(0, 0) rotate(0deg); }
-      50% { transform: translate(-20px, -20px) rotate(180deg); }
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 800px;
-      padding: 0 2rem;
-    }
-
-    .hero h1 {
+    header h1 {
       font-size: 3.5rem;
-      font-weight: 800;
-      margin-bottom: 1rem;
-      opacity: 0;
-      animation: slideUp 1s ease 0.2s forwards;
+      margin-bottom: 20px;
+      animation: fadeInDown 1s ease;
     }
-
-    .hero .subtitle {
-      font-size: 1.8rem;
-      font-weight: 300;
-      margin-bottom: 2rem;
-      opacity: 0;
-      animation: slideUp 1s ease 0.4s forwards;
+    header p {
+      font-size: 1.5rem;
+      max-width: 700px;
+      animation: fadeInUp 1.2s ease;
     }
-
-    .hero .host-info {
-      font-size: 1.2rem;
-      margin-bottom: 3rem;
-      opacity: 0;
-      animation: slideUp 1s ease 0.6s forwards;
+    section {
+      padding: 70px 20px;
+      max-width: 1100px;
+      margin: auto;
     }
-
-    @keyframes slideUp {
-      from {
-        opacity: 0;
-        transform: translateY(50px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .cta-button {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: rgba(255, 255, 255, 0.2);
-      color: var(--white);
-      padding: 1rem 2rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      transition: all 0.3s ease;
-      opacity: 0;
-      animation: slideUp 1s ease 0.8s forwards;
-    }
-
-    .cta-button:hover {
-      background: rgba(255, 255, 255, 0.3);
-      transform: translateY(-2px);
-    }
-
-    #countdown {
-      font-size: 2rem;
-      font-weight: 700;
-      margin: 2rem 0;
-      padding: 1.5rem 2rem;
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      opacity: 0;
-      animation: slideUp 1s ease 1s forwards;
-    }
-
-    /* Floating Elements */
-    .floating-elements {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      z-index: 1;
-    }
-
-    .floating-element {
-      position: absolute;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 50%;
-      animation: floatRandom 15s ease-in-out infinite;
-    }
-
-    .floating-element:nth-child(1) {
-      width: 80px;
-      height: 80px;
-      top: 20%;
-      left: 10%;
-      animation-delay: 0s;
-    }
-
-    .floating-element:nth-child(2) {
-      width: 120px;
-      height: 120px;
-      top: 60%;
-      right: 10%;
-      animation-delay: 3s;
-    }
-
-    .floating-element:nth-child(3) {
-      width: 60px;
-      height: 60px;
-      top: 30%;
-      right: 30%;
-      animation-delay: 6s;
-    }
-
-    @keyframes floatRandom {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      33% { transform: translateY(-30px) rotate(120deg); }
-      66% { transform: translateY(20px) rotate(240deg); }
-    }
-
-    /* Section Styles */
-    .section {
-      padding: 5rem 0;
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+      color: #444;
       position: relative;
     }
-
-    .section:nth-child(even) {
-      background: var(--bg-light);
+    h2::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: #667eea;
+      margin: 10px auto;
+      border-radius: 2px;
     }
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 3rem;
-      background: var(--gradient-primary);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
+    /* About Section */
     .about-content {
-      max-width: 800px;
-      margin: 0 auto;
-      font-size: 1.2rem;
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 5px 30px rgba(0,0,0,0.08);
+      font-size: 1.1rem;
       line-height: 1.8;
-      text-align: center;
-      padding: 2rem;
-      background: var(--bg-card);
-      border-radius: 20px;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      text-align: justify;
+      transition: all 0.4s ease;
+    }
+    .about-content:hover {
+      transform: scale(1.02);
+      box-shadow: 0 15px 50px rgba(102,126,234,0.3);
     }
 
     /* Schedule */
-    .schedule-grid {
-      display: grid;
-      gap: 1.5rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
     .schedule-item {
-      background: var(--bg-card);
-      padding: 1.5rem;
-      border-radius: 15px;
-      box-shadow: var(--shadow);
-      border-left: 5px solid var(--primary);
+      background: white;
+      padding: 20px 25px;
+      border-radius: 8px;
+      border-left: 4px solid #667eea;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.06);
       transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
+      cursor: pointer;
+      margin-bottom: 20px;
     }
-
-    .schedule-item::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 0;
-      height: 100%;
-      background: var(--gradient-accent);
-      transition: width 0.3s ease;
-      z-index: 0;
-    }
-
-    .schedule-item:hover::before {
-      width: 100%;
-    }
-
     .schedule-item:hover {
       transform: translateX(10px);
-      color: var(--white);
+      background: linear-gradient(135deg, #f0f4ff, #ffffff);
+      box-shadow: 0 8px 25px rgba(102,126,234,0.2);
+    }
+    .schedule-time {
+      font-weight: bold;
+      color: #667eea;
     }
 
-    .schedule-item * {
-      position: relative;
-      z-index: 1;
-    }
-
-    .session-header {
-      background: var(--gradient-primary);
-      color: var(--white);
-      padding: 1.5rem;
-      border-radius: 15px;
-      text-align: center;
-      font-size: 1.3rem;
-      font-weight: 600;
-      margin: 2rem 0 1rem 0;
-    }
-
-    .break-item {
-      background: var(--gradient-accent);
-      color: var(--white);
-      text-align: center;
-      font-weight: 600;
-    }
-
-    /* Speakers */
-    .speakers-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin: 3rem 0;
-    }
-
-    .speaker-card {
-      background: var(--bg-card);
-      border-radius: 20px;
-      padding: 2rem;
-      text-align: center;
-      box-shadow: var(--shadow);
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .speaker-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: var(--gradient-primary);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      z-index: 0;
-    }
-
-    .speaker-card:hover::before {
-      opacity: 0.05;
-    }
-
-    .speaker-card:hover {
-      transform: translateY(-10px);
-      box-shadow: var(--shadow-hover);
-    }
-
-    .speaker-card * {
-      position: relative;
-      z-index: 1;
-    }
-
-    .speaker-avatar {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin: 0 auto 1.5rem;
-      border: 4px solid var(--primary);
-      transition: transform 0.3s ease;
-    }
-
-    .speaker-card:hover .speaker-avatar {
-      transform: scale(1.1);
-    }
-
-    .speaker-name {
-      font-size: 1.3rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-
-    .speaker-title {
-      color: var(--text-light);
-      font-size: 1rem;
-    }
-
-    /* Contact & Venue */
-    .contact-venue-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 2rem;
-      margin-bottom: 3rem;
-    }
-
-    .info-card {
-      background: var(--bg-card);
-      padding: 2rem;
-      border-radius: 20px;
-      box-shadow: var(--shadow);
-    }
-
-    .info-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 1.5rem;
-      color: var(--primary);
+    /* Venue */
+    .venue {
       display: flex;
-      align-items: center;
-      gap: 0.5rem;
+      flex-direction: column;
+      gap: 20px;
     }
-
-    .info-list {
-      list-style: none;
-    }
-
-    .info-list li {
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .info-list i {
-      color: var(--primary);
-      width: 20px;
-    }
-
-    .venue-map {
-      text-align: center;
-      margin-top: 2rem;
-    }
-
     .venue-map img {
       width: 100%;
-      max-width: 800px;
-      border-radius: 20px;
-      box-shadow: var(--shadow);
-      transition: all 0.3s ease;
+      border-radius: 10px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
-
     .venue-map img:hover {
-      transform: scale(1.02);
-      box-shadow: var(--shadow-hover);
+      transform: scale(1.05);
+      box-shadow: 0 12px 40px rgba(102,126,234,0.3);
     }
-
-    /* Sponsors */
-    .sponsors-grid {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .sponsor-card {
-      background: var(--bg-card);
-      padding: 1.5rem 2rem;
-      border-radius: 15px;
-      font-weight: 600;
-      color: var(--text-dark);
-      box-shadow: var(--shadow);
-      transition: all 0.3s ease;
-      border: 2px solid transparent;
-    }
-
-    .sponsor-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--primary);
-      box-shadow: var(--shadow-hover);
-    }
-
-    /* FAQ */
-    .faq-grid {
-      max-width: 800px;
-      margin: 0 auto;
-      display: grid;
-      gap: 1rem;
-    }
-
-    .faq-item {
-      background: var(--bg-card);
-      border-radius: 15px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      transition: all 0.3s ease;
-    }
-
-    .faq-question {
-      padding: 1.5rem;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-weight: 600;
-      background: var(--gradient-primary);
-      color: var(--white);
-    }
-
-    .faq-answer {
-      padding: 0 1.5rem;
-      max-height: 0;
-      overflow: hidden;
-      transition: all 0.3s ease;
-      background: var(--white);
-    }
-
-    .faq-item.active .faq-answer {
-      max-height: 200px;
-      padding: 1.5rem;
-    }
-
-    .faq-icon {
-      transition: transform 0.3s ease;
-    }
-
-    .faq-item.active .faq-icon {
-      transform: rotate(180deg);
+    .venue-details {
+      background: white;
+      padding: 20px 25px;
+      border-radius: 10px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.08);
     }
 
     /* Footer */
     footer {
-      background: var(--gradient-primary);
-      color: var(--white);
+      background: #222;
+      color: #ccc;
       text-align: center;
-      padding: 3rem 0;
-      margin-top: 0;
+      padding: 25px 15px;
     }
-
-    /* Scroll to Top Button */
-    #scrollToTop {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      background: var(--gradient-primary);
-      color: var(--white);
-      border: none;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      font-size: 1.2rem;
-      cursor: pointer;
-      box-shadow: var(--shadow);
-      transition: all 0.3s ease;
-      opacity: 0;
-      transform: translateY(100px);
-      z-index: 1000;
+    footer a {
+      color: #667eea;
+      text-decoration: none;
+      transition: color 0.3s;
     }
-
-    #scrollToTop.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    #scrollToTop:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-hover);
+    footer a:hover {
+      color: #9f7aea;
     }
 
     /* Animations */
-    .animate-on-scroll {
-      opacity: 0;
-      transform: translateY(50px);
-      transition: all 0.8s ease;
+    @keyframes fadeInDown {
+      from {opacity: 0; transform: translateY(-30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
     }
 
-    .animate-on-scroll.animate {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .stagger-1 { transition-delay: 0.1s; }
-    .stagger-2 { transition-delay: 0.2s; }
-    .stagger-3 { transition-delay: 0.3s; }
-    .stagger-4 { transition-delay: 0.4s; }
-
-    /* Mobile Responsiveness */
+    /* Responsive */
     @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-      }
-      
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-      
-      .hero .subtitle {
-        font-size: 1.4rem;
-      }
-      
-      #countdown {
-        font-size: 1.5rem;
-        padding: 1rem;
-      }
-      
-      .section {
-        padding: 3rem 0;
-      }
-      
-      .section-title {
-        font-size: 2rem;
-      }
-      
-      .container {
-        padding: 0 1rem;
-      }
-    }
-
-    /* Loading Animation */
-    .loading-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: var(--gradient-primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 10000;
-      transition: opacity 0.5s ease;
-    }
-
-    .loading-spinner {
-      width: 60px;
-      height: 60px;
-      border: 3px solid rgba(255, 255, 255, 0.3);
-      border-top: 3px solid white;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-    }
-
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    .loading-overlay.hidden {
-      opacity: 0;
-      pointer-events: none;
+      header h1 { font-size: 2.2rem; }
+      header p { font-size: 1.1rem; }
+      .venue { flex-direction: column; }
     }
   </style>
 </head>
 <body>
-  <!-- Loading Screen -->
-  <div class="loading-overlay" id="loadingOverlay">
-    <div class="loading-spinner"></div>
-  </div>
 
-  <!-- Navigation -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-container">
-      <div class="logo">SSU Global Digital Bridge</div>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#schedule">Schedule</a></li>
-        <li><a href="#speakers">Speakers</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
+  <header>
+    <h1>ICT Seminar 2025 - Seoul</h1>
+    <p>Exploring Innovations in ICT for a Smarter Future</p>
+  </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="floating-elements">
-      <div class="floating-element"></div>
-      <div class="floating-element"></div>
-      <div class="floating-element"></div>
-    </div>
-    
-    <div class="hero-content">
-      <h1>2025 SSU Global Digital Bridge</h1>
-      <p class="subtitle">Global Digital Innovation & ICT Partnerships for Sustainable Development</p>
-      <p class="host-info">
-        <i class="fas fa-university"></i> Host: Graduate School of Information Science, Soongsil University<br>
-        <i class="fas fa-map-marker-alt"></i> Seoul, South Korea | <i class="fas fa-calendar"></i> October 28, 2025
-      </p>
-      <div id="countdown">Loading countdown...</div>
-      <a href="#about" class="cta-button">
-        <i class="fas fa-arrow-down"></i>
-        Learn More
-      </a>
+  <section id="about">
+    <h2>About the Event</h2>
+    <div class="about-content">
+      <p>The ICT Seminar 2025, hosted in Seoul, brings together industry leaders, researchers, and students to discuss the transformative role of Information and Communication Technology. This event will showcase the latest innovations, explore trends in AI, cloud computing, and 5G, and provide a platform for networking and collaboration.</p>
     </div>
   </section>
 
-  <!-- About Section -->
-  <section id="about" class="section">
-    <div class="container">
-      <h2 class="section-title animate-on-scroll">About the Seminar</h2>
-      <div class="about-content animate-on-scroll">
-        <p>
-          Korea's ICT industry has achieved remarkable growth through government policy support
-          and technological innovation. Now, leveraging this success, Korea aims to establish
-          collaborative models with developing countries for mutual growth. The conference will
-          feature ICT convergence business models prepared by 190 officials from 52 countries who
-          graduated from or are enrolled in KOICA-supported master's programs, alongside
-          presentations from leading Korean ICT companies.
-        </p>
+  <section id="schedule">
+    <h2>Program Schedule</h2>
+    <div class="schedule-item">
+      <div class="schedule-time">09:00 - 09:30</div>
+      <div class="schedule-desc">Opening Ceremony & Welcome Speech</div>
+    </div>
+    <div class="schedule-item">
+      <div class="schedule-time">09:30 - 11:00</div>
+      <div class="schedule-desc">Keynote: The Future of ICT in the Next Decade</div>
+    </div>
+    <div class="schedule-item">
+      <div class="schedule-time">11:15 - 12:30</div>
+      <div class="schedule-desc">Panel Discussion: AI and Cloud Integration</div>
+    </div>
+    <div class="schedule-item">
+      <div class="schedule-time">14:00 - 15:30</div>
+      <div class="schedule-desc">Workshop: Building Scalable Cloud Solutions</div>
+    </div>
+    <div class="schedule-item">
+      <div class="schedule-time">16:00 - 17:00</div>
+      <div class="schedule-desc">Closing Remarks & Networking</div>
+    </div>
+  </section>
+
+  <section id="venue">
+    <h2>Venue</h2>
+    <div class="venue">
+      <div class="venue-map">
+        <img src="https://source.unsplash.com/1200x600/?seoul,city" alt="Seoul Venue">
+      </div>
+      <div class="venue-details">
+        <h3>COEX Convention & Exhibition Center</h3>
+        <p>513, Yeongdong-daero, Gangnam-gu, Seoul, South Korea</p>
       </div>
     </div>
   </section>
 
-  <!-- Schedule Section -->
-  <section id="schedule" class="section">
-    <div class="container">
-      <h2 class="section-title animate-on-scroll">Program Schedule</h2>
-      <div class="schedule-grid">
-        <div class="schedule-item animate-on-scroll stagger-1">
-          <i class="fas fa-clock"></i> <strong>13:20 – 13:50</strong> Registration
-        </div>
-        <div class="schedule-item animate-on-scroll stagger-2">
-          <i class="fas fa-flag-checkered"></i> <strong>13:50 – 14:10</strong> Opening Ceremony (Welcome, Keynotes, Greetings)
-        </div>
-        
-        <div class="session-header animate-on-scroll">
-          <i class="fas fa-globe"></i> Session 1 – Global Demand-Driven ICT Partnership Models
-        </div>
-        
-        <div class="schedule-item animate-on-scroll stagger-1">
-          <i class="fas fa-laptop"></i> <strong>14:10 – 14:30</strong> E-Government or Online Procurement System – Mr. Neba (Cameroon)
-        </div>
-        <div class="schedule-item animate-on-scroll stagger-2">
-          <i class="fas fa-solar-panel"></i> <strong>14:30 – 14:50</strong> Solar Power PCP – Mr. Sliffe (DR Congo, KAIST PhD Candidate)
-        </div>
-        <div class="schedule-item animate-on-scroll stagger-3">
-          <i class="fas fa-cloud"></i> <strong>14:50 – 15:10</strong> Digital Archive for Meteorological Agency – Mr. Alfred (Ghana)
-        </div>
-        <div class="schedule-item animate-on-scroll stagger-4">
-          <i class="fas fa-presentation"></i> <strong>15:10 – 15:30</strong> TBD – Ms. Brandy (Uganda)
-        </div>
-        
-        <div class="schedule-item break-item animate-on-scroll">
-          <i class="fas fa-coffee"></i> <strong>15:30 – 15:50</strong> Tech & Talk Break
-        </div>
-        
-        <div class="session-header animate-on-scroll">
-          <i class="fas fa-lightbulb"></i> Session 2 – Tailored Solutions & Inspiring Keynotes
-        </div>
-        
-        <div class="schedule-item animate-on-scroll stagger-1">
-          <i class="fas fa-robot"></i> <strong>15:50 – 16:20</strong> Digital or AI Solutions – Dr. Jeon Wonyoung (TG CEO)
-        </div>
-        <div class="schedule-item animate-on-scroll stagger-2">
-          <i class="fas fa-microphone"></i> <strong>16:20 – 16:50</strong> Keynote 1 – Dr. Eugene Yoo (ex-NVIDIA Korea CEO)
-        </div>
-        <div class="schedule-item animate-on-scroll stagger-3">
-          <i class="fas fa-microphone"></i> <strong>16:50 – 17:20</strong> Keynote 2 – Dr. Jeongwon Yoon (AWS Korea CEO)
-        </div>
-        <div class="schedule-item animate-on-scroll stagger-4">
-          <i class="fas fa-question-circle"></i> <strong>17:20 – 17:40</strong> Q & A Session
-        </div>
-        <div class="schedule-item animate-on-scroll stagger-1">
-          <i class="fas fa-award"></i> <strong>17:40 – 17:50</strong> Appreciation Awards to Internship Providers
-        </div>
-        <div class="schedule-item animate-on-scroll stagger-2">
-          <i class="fas fa-utensils"></i> <strong>17:50</strong> Closing & Networking Dinner
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Speakers Section -->
-  <section id="speakers" class="section">
-    <div class="container">
-      <h2 class="section-title animate-on-scroll">Distinguished Speakers</h2>
-      
-      <div class="speakers-grid">
-        <div class="speaker-card animate-on-scroll stagger-1">
-          <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Dr. Eugene Yoo" class="speaker-avatar" />
-          <h3 class="speaker-name">Dr. Eugene Yoo</h3>
-          <p class="speaker-title">ex-NVIDIA Korea CEO</p>
-        </div>
-        <div class="speaker-card animate-on-scroll stagger-2">
-          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Dr. Jeon Wonyoung" class="speaker-avatar" />
-          <h3 class="speaker-name">Dr. Jeon Wonyoung</h3>
-          <p class="speaker-title">TG CEO</p>
-        </div>
-        <div class="speaker-card animate-on-scroll stagger-3">
-          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Dr. Jeongwon Yoon" class="speaker-avatar" />
-          <h3 class="speaker-name">Dr. Jeongwon Yoon</h3>
-          <p class="speaker-title">AWS Korea CEO</p>
-        </div>
-      </div>
-
-      <div class="speakers-grid">
-        <div class="speaker-card animate-on-scroll stagger-1">
-          <img src="https://randomuser.me/api/portraits/men/35.jpg" alt="Mr. Neba" class="speaker-avatar" />
-          <h3 class="speaker-name">Mr. Neba</h3>
-          <p class="speaker-title">Cameroon</p>
-        </div>
-        <div class="speaker-card animate-on-scroll stagger-2">
-          <img src="https://randomuser.me/api/portraits/men/28.jpg" alt="Mr. Sliffe" class="speaker-avatar" />
-          <h3 class="speaker-name">Mr. Sliffe</h3>
-          <p class="speaker-title">DR Congo, KAIST PhD Candidate</p>
-        </div>
-        <div class="speaker-card animate-on-scroll stagger-3">
-          <img src="https://randomuser.me/api/portraits/men/40.jpg" alt="Mr. Alfred" class="speaker-avatar" />
-          <h3 class="speaker-name">Mr. Alfred</h3>
-          <p class="speaker-title">Ghana</p>
-        </div>
-        <div class="speaker-card animate-on-scroll stagger-4">
-          <img src="https://randomuser.me/api/portraits/women/30.jpg" alt="Ms. Brandy" class="speaker-avatar" />
-          <h3 class="speaker-name">Ms. Brandy</h3>
-          <p class="speaker-title">Uganda</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact & Venue Section -->
-  <section id="contact" class="section">
-    <div class="container">
-      <h2 class="section-title animate-on-scroll">Contact & Venue</h2>
-      
-      <div class="contact-venue-grid">
-        <div class="info-card animate-on-scroll stagger-1">
-          <h3><i class="fas fa-phone"></i> Contact Information</h3>
-          <ul class="info-list">
-            <li><i class="fas fa-user"></i> <strong>Ms. Hyesung Lee:</strong> +82-2-820-0269, +82-10-3333-1542</li>
-            <li><i class="fas fa-user-tie"></i> <strong>Prof. Gee-Hyun Hwang:</strong> +82-10-7340-9779</li>
-          </ul>
-        </div>
-        
-        <div class="info-card animate-on-scroll stagger-2">
-          <h3><i class="fas fa-map-marker-alt"></i> Venue Directions</h3>
-          <ul class="info-list">
-            <li><i class="fas fa-building"></i> <strong>Address:</strong> Room 309, Venture Hall (#10 on the map)<br>369 Sangdo-ro, Dongjak-gu, Seoul, Republic of Korea</li>
-            <li><i class="fas fa-subway"></i> <strong>Subway:</strong> Soongsil University Station (Line 7), Exit 3</li>
-            <li><i class="fas fa-bus"></i> <strong>Bus Routes:</strong> 501, 650, 750, 751, 752, 753, 5511, 5517, 5520</li>
-          </ul>
-        </div>
-      </div>
-      
-      <div class="venue-map animate-on-scroll">
-        <img src="https://via.placeholder.com/800x400/667eea/ffffff?text=Venue+Location+Map" alt="Venue Location Map">
-      </div>
-    </div>
-  </section>
-
-  <!-- Sponsors Section -->
-  <section id="sponsors" class="section">
-    <div class="container">
-      <h2 class="section-title animate-on-scroll">Our Sponsors</h2>
-      <div class="sponsors-grid">
-        <div class="sponsor-card animate-on-scroll stagger-1">KOICA</div>
-        <div class="sponsor-card animate-on-scroll stagger-2">KDDPA</div>
-        <div class="sponsor-card animate-on-scroll stagger-3">KIPA</div>
-        <div class="sponsor-card animate-on-scroll stagger-4">KRIM</div>
-        <div class="sponsor-card animate-on-scroll stagger-1">SSU GSIS Alumni Association</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ Section -->
-  <section id="faq" class="section">
-    <div class="container">
-      <h2 class="section-title animate-on-scroll">Frequently Asked Questions</h2>
-      <div class="faq-grid">
-        <div class="faq-item animate-on-scroll stagger-1">
-          <div class="faq-question">
-            <span>How can I register for the seminar?</span>
-            <i class="fas fa-chevron-down faq-icon"></i>
-          </div>
-          <div class="faq-answer">
-            <p>Registration will be available on-site on the day of the event. Please arrive early to ensure your spot as seating may be limited.</p>
-          </div>
-        </div>
-        
-        <div class="faq-item animate-on-scroll stagger-2">
-          <div class="faq-question">
-            <span>Is there a registration fee?</span>
-            <i class="fas fa-chevron-down faq-icon"></i>
-          </div>
-          <div class="faq-answer">
-            <p>The seminar is completely free for all registered participants. This includes access to all sessions, networking opportunities, and refreshments.</p>
-          </div>
-        </div>
-        
-        <div class="faq-item animate-on-scroll stagger-3">
-          <div class="faq-question">
-            <span>Will presentation materials be available?</span>
-            <i class="fas fa-chevron-down faq-icon"></i>
-          </div>
-          <div class="faq-answer">
-            <p>Yes, presentation slides and materials will be made available to registered participants after the event through our official channels.</p>
-          </div>
-        </div>
-        
-        <div class="faq-item animate-on-scroll stagger-4">
-          <div class="faq-question">
-            <span>Is parking available at the venue?</span>
-            <i class="fas fa-chevron-down faq-icon"></i>
-          </div>
-          <div class="faq-answer">
-            <p>Limited parking is available on campus. We recommend using public transportation as the venue is easily accessible via subway and bus.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
   <footer>
-    <div class="container">
-      <p>&copy; 2025 ICT Seminar Organizers. All rights reserved.</p>
-      <p>Powered by Soongsil University Graduate School of Information Science</p>
-    </div>
+    <p>&copy; 2025 ICT Seminar | Designed with ❤️ | <a href="#">Contact Us</a></p>
   </footer>
-
-  <!-- Scroll to Top Button -->
-  <button id="scrollToTop">
-    <i class="fas fa-arrow-up"></i>
-  </button>
-
-  <script>
-    // Loading Screen
-    window.addEventListener('load', function() {
-      setTimeout(() => {
-        document.getElementById('loadingOverlay').classList.add('hidden');
-      }, 1000);
-    });
-
-    // Navbar scroll effect
-    window.addEventListener('scroll', function() {
-      const navbar = document.getElementById('navbar');
-      const scrollToTopBtn = document.getElementById('scrollToTop');
-      
-      if (window.scrollY > 100) {
-        navbar.classList.add('scrolled');
-        scrollToTopBtn.classList.add('visible');
-      } else {
-        navbar.classList.remove('scrolled');
-        scrollToTopBtn.classList.remove('visible');
-      }
-    });
-
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
-
-    // Scroll animations
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver(function(entries) {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate');
-        }
-      });
-    }, observerOptions);
-
-    document.querySelectorAll('.animate-on-scroll').forEach(el => {
-      observer.observe(el);
-    });
-
-    // FAQ Accordion
-    document.querySelectorAll('.faq-question').forEach(question => {
-      question.addEventListener('click', function() {
-        const faqItem = this.parentElement;
-        const isActive = faqItem.classList.contains('active');
-        
-        // Close all other FAQ items
-        document.querySelectorAll('.faq-item').forEach(item => {
-          item.classList.remove('active');
-        });
-        
-        // Toggle current item
-        if (!isActive) {
-          faqItem.classList.add('active');
-        }
-      });
-    });
-
-    // Countdown Timer
-    const eventDate = new Date("October 28, 2025 13:30:00").getTime();
-    const countdownElement = document.getElementById("countdown");
-    
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const distance = eventDate - now;
-      
-      if (distance < 0) {
-        countdownElement.innerHTML = '<i class="fas fa-rocket"></i> The seminar has started!';
-        return;
-      }
-      
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-      
-      countdownElement.innerHTML = `
-        <i class="fas fa-clock"></i> 
-        ${days}d ${hours}h ${minutes}m ${seconds}s remaining
-      `;
-    }
-    
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-
-    // Scroll to top functionality
-    document.getElementById('scrollToTop').addEventListener('click', function() {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-
-    // Parallax effect for hero section
-    window.addEventListener('scroll', function() {
-      const scrolled = window.pageYOffset;
-      const parallaxElements = document.querySelectorAll('.floating-element');
-      
-      parallaxElements.forEach((element, index) => {
-        const speed = 0.5 + (index * 0.2);
-        element.style.transform = `translateY(${scrolled * speed}px)`;
-      });
-    });
-
-    // Add dynamic background patterns
-    function createBackgroundPattern() {
-      const patterns = document.querySelectorAll('.section:nth-child(even)');
-      patterns.forEach(section => {
-        section.style.backgroundImage = `
-          radial-gradient(circle at 25% 25%, rgba(102, 126, 234, 0.03) 0%, transparent 70%),
-          radial-gradient(circle at 75% 75%, rgba(118, 75, 162, 0.03) 0%, transparent 70%)
-        `;
-      });
-    }
-    
-    createBackgroundPattern();
-
-    // Add typing effect to hero title (optional enhancement)
-    function typeWriter(element, text, delay = 100) {
-      let i = 0;
-      element.innerHTML = '';
-      
-      function type() {
-        if (i < text.length) {
-          element.innerHTML += text.charAt(i);
-          i++;
-          setTimeout(type, delay);
-        }
-      }
-      
-      type();
-    }
-
-    // Enhanced hover effects for interactive elements
-    document.querySelectorAll('.speaker-card, .sponsor-card, .info-card').forEach(card => {
-      card.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-10px) scale(1.02)';
-      });
-      
-      card.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0) scale(1)';
-      });
-    });
-
-    // Add particle effect on scroll (lightweight)
-    let particles = [];
-    
-    function createParticle() {
-      if (particles.length < 5) {
-        const particle = document.createElement('div');
-        particle.style.cssText = `
-          position: fixed;
-          width: 4px;
-          height: 4px;
-          background: rgba(102, 126, 234, 0.4);
-          border-radius: 50%;
-          pointer-events: none;
-          z-index: 1;
-          animation: particleFloat 3s ease-out forwards;
-        `;
-        
-        particle.style.left = Math.random() * window.innerWidth + 'px';
-        particle.style.top = window.innerHeight + 'px';
-        
-        document.body.appendChild(particle);
-        particles.push(particle);
-        
-        setTimeout(() => {
-          particle.remove();
-          particles = particles.filter(p => p !== particle);
-        }, 3000);
-      }
-    }
-    
-    // Add particle CSS animation
-    const particleStyle = document.createElement('style');
-    particleStyle.textContent = `
-      @keyframes particleFloat {
-        to {
-          transform: translateY(-${window.innerHeight + 100}px);
-          opacity: 0;
-        }
-      }
-    `;
-    document.head.appendChild(particleStyle);
-    
-    // Create particles on scroll
-    let lastScrollY = window.scrollY;
-    window.addEventListener('scroll', () => {
-      if (Math.abs(window.scrollY - lastScrollY) > 100) {
-        createParticle();
-        lastScrollY = window.scrollY;
-      }
-    });
-
-    // Performance optimization: throttle scroll events
-    function throttle(func, limit) {
-      let inThrottle;
-      return function() {
-        const args = arguments;
-        const context = this;
-        if (!inThrottle) {
-          func.apply(context, args);
-          inThrottle = true;
-          setTimeout(() => inThrottle = false, limit);
-        }
-      }
-    }
-
-    // Apply throttling to scroll events
-    const throttledScroll = throttle(function() {
-      // Scroll-based animations here
-    }, 16); // ~60fps
-
-    window.addEventListener('scroll', throttledScroll);
-  </script>
 
 </body>
 </html>
