@@ -454,7 +454,7 @@
 }
 .google-btn:hover {
   background: white;
-  border: 2px solid #4285F4;
+  border: 1px solid #4285F4;
   color: #4285F4;
 }
 
@@ -465,7 +465,7 @@
 }
 .naver-btn:hover {
   background: white;
-  border: 2px solid #2DB400;
+  border: 1px solid #2DB400;
   color: #2DB400;
 }
 #congratulatory {
