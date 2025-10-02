@@ -1,0 +1,427 @@
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('hero-bg.avif') no-repeat center center/cover;
+      color: #fff;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.6rem;
+      line-height: 1.1;
+      margin-bottom: 5px;
+    }
+
+    .btn {
+      background: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+.register-btn {
+  background: #007bff;
+  color: #fff;
+  padding: 15px 35px;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  animation: zoomInOut 1.5s infinite;
+  transition: background 0.5s;
+}
+
+.register-btn:hover {
+   background: #fff;
+  color: #000;
+  border: 1px solid #007bff;
+}
+
+@keyframes zoomInOut {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+    h2, h3 {
+      color: #007bff;
+    }
+
+    h2 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+
+    .about p {
+      text-align: justify;
+    }
+
+    .schedule, .speakers, .testimonials, .faq, .why-attend, .gallery {
+      display: grid;
+      gap: 20px;
+    }
+
+    .schedule div, .speakers div, .testimonials div, .faq div, .why-attend div {
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease-out;
+    }
+
+
+/* About content start */
+.about-content {
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 5px 30px rgba(0,0,0,0.08);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  text-align: justify;
+  transition: all 0.4s ease; /* unified transition */
+}
+
+.about-content:hover {
+  transform: scale(1.02);
+  box-shadow: 0 15px 50px rgba(102,126,234,0.3);
+}
+
+/* About content end */
+/* Schedule */
+    /* Schedule Section */
+#schedule {
+  padding: 70px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.schedule {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.schedule h3 {
+  margin: 25px 0 10px;
+  font-size: 1.4rem;
+  color: #444;
+  border-left: 4px solid #667eea;
+  padding-left: 10px;
+}
+
+.schedule-item {
+  background: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.schedule-item:hover {
+  transform: translateX(8px);
+  background: linear-gradient(135deg, #f0f4ff, #ffffff);
+  box-shadow: 0 8px 20px rgba(102,126,234,0.2);
+}
+
+.schedule-item.break {
+  text-align: center;
+  background: #fdf5e6;
+  border-left: 4px solid #ff9800;
+  font-style: italic;
+  font-weight: bold;
+}
+
+    .speakers {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .speaker {
+      flex: 0 1 220px;
+      text-align: center;
+      padding: 15px;
+      border: 2px solid transparent;
+      border-radius: 12px;
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+      /* cursor: pointer; */
+    }
+
+    .speaker img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+      transition: transform 0.3s;
+    }
+
+    .speaker:hover {
+      transform: scale(1.05);
+      border-color: #007bff;
+      box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+    }
+
+    .speaker:hover img {
+      transform: scale(1.1);
+    }
+
+    .contact-venue {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    .contact-info, .venue-info {
+      flex: 1;
+      min-width: 300px;
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 12px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      transition: all 0.3s ease;
+    }
+
+    .contact-info h3, .venue-info h3 {
+      margin-bottom: 15px;
+    }
+
+    .contact-info ul, .venue-info ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .contact-info li, .venue-info li {
+      margin-bottom: 10px;
+    }
+    .contact-info:hover {
+  transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+      border: 2px solid #007bff;
+}
+.venue-info:hover {
+  transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+      border: 2px solid #007bff;
+}
+    .venue-map {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .venue-map img {
+      width: 100%;
+      max-width: 700px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .venue-map img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+      border: 2px solid #007bff;
+    }
+
+    .faq div, .schedule-item {
+      border-left: 4px solid #007bff;
+      padding-left: 12px;
+      background: #f9f9f9;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    .sponsors {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .sponsor-card {
+      background: #f8f9fa;
+      border: 2px solid #e0e0e0;
+      border-radius: 12px;
+      padding: 20px 30px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #333;
+      text-align: center;
+      min-width: 160px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+
+    .sponsor-card:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+      border-color: #007bff;
+      background: #ffffff;
+    }
+
+    footer {
+      background: #007bff;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    .visible {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+
+    #countdown {
+      font-size: 1.5rem;
+      margin: 20px 0;
+    }
+
+    .why-attend {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .gallery {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    #topBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 99;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    .speaker-link {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 6px 12px;
+  border: #007bff 1px solid;
+  color: #000;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+#registration {
+  padding: 70px 20px;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+  
+}
+
+.registration-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  position: relative;
+
+}
+
+/* Divider line */
+.divider {
+  width: 2px;
+  background: #000;
+  height: 200px;
+}
+
+/* Mobile: hide the divider for stacked layout */
+@media (max-width: 768px) {
+  .divider {
+    display: none;
+  }
+}
+
+
+.register-left, .register-right {
+  flex: 1;
+  min-width: 250px;
+  text-align: center;
+}
+
+.register-btn-naver {
+  background: #007bff;
+  color: #fff;
+  padding: 15px 35px;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  /* animation: zoomInOut 1.5s infinite; */
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.register-right img {
+  width: 200px;
+  height: 200px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
