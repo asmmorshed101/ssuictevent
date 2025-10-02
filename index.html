@@ -213,7 +213,7 @@
 
   <section id="faq" class="faq">
     <h2>FAQ</h2>
-    <div><strong>How can I register?</strong><br>Registration will be available on-site.</div>
+    <div><strong>How can I register?</strong><br>Registration will be available on-site as well we you can register <a href="#registration">here</a></div>
     <div><strong>Is there a fee?</strong><br>The seminar is free for registered participants.</div>
   </section>
 
@@ -269,7 +269,7 @@
   </script>
 <script>
   document.querySelector('.register-btn').addEventListener('click', function(e) {
-    e.preventDefault(); // Default jump বন্ধ করবে
+    e.preventDefault(); 
     const target = document.querySelector('#registration');
     if(target) {
       target.scrollIntoView({ behavior: 'smooth' });
