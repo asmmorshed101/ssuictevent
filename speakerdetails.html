@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Speaker Details - ICT Seminar 2025</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      margin: 0;
+      line-height: 1.6;
+      background: #f4f6f8;
+      color: #333;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    .back-link {
+      margin-bottom: 20px;
+      display: inline-block;
+      color: #007bff;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .back-link:hover {
+      color: #0056b3;
+    }
+
+    .speaker-card {
+  background: #fff;
+  display: flex;
+  gap: 30px;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  align-items: flex-start;
+  margin-bottom: 30px; /* <-- add vertical gap between cards */
+}
+
+
+    .speaker-card:hover {
+      transform: translateX(8px);
+      box-shadow: 0 12px 30px rgba(0,123,255,0.15);
+    }
+
+    .speaker-photo {
+      flex-shrink: 0;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #007bff;
+      position: center center;
+      transition: transform 0.3s;
+    }
+
+    .speaker-photo:hover {
+      transform: scale(1.05);
+    }
+
+    .speaker-info {
+      flex: 1;
+    }
+
+    .speaker-info h1 {
+      margin-top: 0;
+      color: #007bff;
+      font-size: 2rem;
+    }
+
+    .speaker-info h2 {
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-top: 5px;
+      color: #555;
+    }
+
+    .speaker-info p {
+      font-size: 1rem;
+      margin-top: 20px;
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+    .speaker-info .socials {
+      margin-top: 20px;
+    }
+
+    .speaker-info .socials a {
+      margin-right: 15px;
+      display: inline-block;
+      color: #007bff;
+      font-size: 1.4rem;
+      transition: color 0.3s;
+    }
+
+    .speaker-info .socials a:hover {
+      color: #0056b3;
+    }
+
+    @media (max-width: 768px) {
+      .speaker-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .speaker-photo {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 20px;
+      }
+      .speaker-info p {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <a href="index.html" class="back-link">&larr; Back to Seminar</a>
+
+    <div class="speaker-card" id="dreung">
+      <img src="images/Dr.-Eung-Joon-Yoo-(ex-NVIDIA-Korea CEO).jpg" alt="Dr. Eung Joon Yoo" class="speaker-photo">
+      <div class="speaker-info">
+        <h1>Dr. Eung Joon Yoo</h1>
+        <h2>ex-NVIDIA Korea, CEO</h2>
+        <p>
+          Dr. Yoo is a veteran AI evangelist and consultant with over 36 years of experience in IT, consulting, and AI. He is currently CEO of JOON AI Consulting, advising enterprises on AI strategies, infrastructure, and next-generation agentic AI. Formerly, he led AI businesses at KAYTUS Korea and NVIDIA Korea, where he expanded the AI market more than 150-fold. His career also includes leadership roles at Oracle, Sun Microsystems, and HPE Korea. Each year, he delivers 20+ lectures and consulting sessions on AI to executives, universities, and industry forums.
+        </p>
+
+        
+      </div>
+    </div>
+    <div class="speaker-card" id="drwon">
+      <img src="images/Dr.-Won-Young-Jeon-(TG CEO).png" alt="Dr. Eung Joon Yoo" class="speaker-photo">
+      <div class="speaker-info">
+        <h1>Dr. Jeongwon Yoon</h1>
+        <h2>AWS Korea CEO</h2>
+        <p>
+          Dr. Jeon is a leading expert in ICT consulting and smart agriculture. He founded TG Consulting in 2010, which has grown into Korea’s No.1 public sector IT consulting firm. He earned his Ph.D. in IT Policy and Management from Soongsil University in 2017. Currently, he serves as a Distinguished Professor of Smart Farming at Huree University in Mongolia and a Distinguished Professor of Digital Studies at Open Cyber University of Korea. He brings a wealth of experience in global ODA projects, particularly in applying Korean smart farm solutions to developing countries.
+        </p>
+
+        
+      </div>
+    </div>
+    <div class="speaker-card" id="drjeong">
+      <img src="images/Dr.-Jeong-Won-Yoon-(AWS-Korea-CEO).png" alt="Dr. Eung Joon Yoo" class="speaker-photo">
+      <div class="speaker-info">
+        <h1>Dr. Jeongwon Yoon</h1>
+        <h2>AWS Korea CEO</h2>
+        <p>
+          Dr. Jeon is a leading expert in ICT consulting and smart agriculture. He founded TG Consulting in 2010, which has grown into Korea’s No.1 public sector IT consulting firm. He earned his Ph.D. in IT Policy and Management from Soongsil University in 2017. Currently, he serves as a Distinguished Professor of Smart Farming at Huree University in Mongolia and a Distinguished Professor of Digital Studies at Open Cyber University of Korea. He brings a wealth of experience in global ODA projects, particularly in applying Korean smart farm solutions to developing countries.
+        </p>
+
+        
+      </div>
+    </div>
+    <div class="speaker-card" id="msbrandy">
+      <img src="images/Ms.Brandy.jpg" alt="Dr. Eung Joon Yoo" class="speaker-photo">
+      <div class="speaker-info">
+        <h1>Ms. Brandy Azeirwe</h1>
+        <h2>IT Officer, Ministry of Digital Technology and Innovation of Uganda</h2>
+        <p>
+          Ms. Brandy serves as an IT Officer at the Ministry of Digital Technology and Innovation of Uganda, where she has led national ICT and digital service transformation projects. She is currently pursuing a Master of Engineering in Digital Transformation Technology at Soongsil University in Korea, focusing her research on applying digital innovation to e-government systems and services. She is a seasoned professional with extensive experience in shaping Uganda’s digital transformation strategy and agenda.
+        </p>
+
+        
+      </div>
+    </div>
+    <div class="speaker-card" id="mralfred">
+      <img src="images/Mr.Alfred.jpg" alt="Dr. Eung Joon Yoo" class="speaker-photo">
+      <div class="speaker-info">
+        <h1>Mr. Alfred Obodai</h1>
+        <h2>Head of IT, Ghana Meteorological Agency</h2>
+        <p>
+          Mr. Alfred serves as the Head of IT at the Ghana Meteorological Agency, operating under the Ministry of Communication, Digital Technology and Innovation in Ghana. He has led national efforts in digital transformation within meteorological services. He is currently pursuing a Master of Engineering in Digital Transformation Technology at Soongsil University in Korea, where he is expanding his expertise in applying digital innovation to climate research and forecasting.
+        </p>
+
+        
+      </div>
+    </div>
+    <div class="speaker-card" id="mrsllife">
+      <img src="images/Mr.Sllife.jpg" alt="Dr. Eung Joon Yoo" class="speaker-photo">
+      <div class="speaker-info">
+        <h1>Mr. Sllife Nyazabe</h1>
+        <h2>Ph.D. candidate at the KAIST</h2>
+        <p>
+          Mr. Sllife is a Ph.D. candidate at the KAIST Department of Business and Technology Management, Graduate School of Global Digital Innovation. He holds a Master of Engineering in ICT Techno Policy from Soongsil University and a Bachelor's degree in Design of Information Systems from the University of Kinshasa. With a professional background as a senior lecturer and researcher at the University of Kinshasa, he has extensive experience in information systems design, research methodology, and digital technology. 
+        </p>
+
+        
+      </div>
+    </div>
+    <div class="speaker-card" id="mrneba">
+      <img src="images/Mr.NebaCameron.jpg" alt="Dr. Eung Joon Yoo" class="speaker-photo">
+      <div class="speaker-info">
+        <h1>Mr. Ayebong Toh Neba</h1>
+        <h2></h2>
+        <p>
+          Mr. Neba is the National Coordinator of Cameroon’s electronic government procurement platform known as COLEPS (Cameroon OnLine E-Procurement System). He has played a central role in digitalizing public procurement processes in Cameroon.
+          Mr. Neba received his Master of Engineering in ICT Policy from Soongsil University in 2018, and continues to serve as a key bridge between Korea’s ICT knowledge and Cameroon’s e-government development.
+
+        </p>
+
+        
+      </div>
+    </div>
+
+   
+
+  </div>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const hash = window.location.hash.substring(1); // get hash without #
+    const allDetails = document.querySelectorAll('.speaker-card');
+    
+    // hide all speaker cards initially
+    allDetails.forEach(div => div.style.display = 'none');
+    
+    // show the targeted speaker card
+    if(hash) {
+      const target = document.getElementById(hash);
+      if(target) target.style.display = 'block';
+    } else {
+      // optional: show first speaker if no hash is provided
+      if(allDetails[0]) allDetails[0].style.display = 'block';
+    }
+  });
+</script>
+
+
+</body>
+</html>
