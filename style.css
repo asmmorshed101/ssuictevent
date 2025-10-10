@@ -600,11 +600,15 @@ header p {
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   padding: 20px;
   width: 250px;
+  border: 2px solid transparent;
+
   transition: transform 0.3s;
 }
 
 .openingCeremony-card:hover {
   transform: translateY(-10px);
+  border-color: #007bff;
+  box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
 }
 
 
@@ -620,6 +624,7 @@ header p {
   flex-wrap: wrap;
   gap: 30px;
   margin-top: 20px;
+  
 }
 
 .congratulatory-card {
@@ -628,8 +633,15 @@ header p {
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   padding: 20px;
   width: 250px;
+  border: 2px solid transparent;
+
   transition: transform 0.3s;
 }
+.congratulatory-card:hover{
+  border-color: #007bff;
+  box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+}
+
 
 .congratulatory-card:hover {
   transform: translateY(-10px);
