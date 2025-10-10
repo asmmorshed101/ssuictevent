@@ -315,7 +315,7 @@ header p {
       margin-bottom: 10px;
     }
 
-    .sponsors {
+    /* .sponsors {
       display: flex;
       justify-content: center;
       gap: 20px;
@@ -343,7 +343,70 @@ header p {
       box-shadow: 0 6px 15px rgba(0,0,0,0.15);
       border-color: #007bff;
       background: #ffffff;
-    }
+    } */
+
+    /* new css sponsor start */
+    #sponsors {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+}
+
+#sponsors h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #222;
+}
+
+/* Existing style + image support */
+.sponsors {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.sponsor-card {
+  background: #f8f9fa;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 20px 25px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  min-width: 160px;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s, background 0.3s;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.sponsor-card img {
+  width: 90px;
+  height: auto;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.sponsor-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  border-color: #007bff;
+  background: #ffffff;
+}
+
+.sponsor-card:hover img {
+  transform: scale(1.05);
+}
+
+.sponsor-card p {
+  margin: 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+    /* new css sponsor end */
 
     footer {
       background: #007bff;
